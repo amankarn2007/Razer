@@ -1,6 +1,6 @@
 import "./globals.css"
 import Navbar from "./components/Navbar";
-import Notification from "./components/Notification";
+import NotificationStruct from "./components/Notification";
 import Hero1 from "./components/Hero1";
 import Hero2 from "./components/Hero2";
 import ProductSection from "./components/ProductSection";
@@ -12,9 +12,7 @@ export default function Home() {
     <div className="w-full h-screen font-razer">
       <header className="fixed top-0 left-0 w-full z-50">
         <Navbar position="fixed"/>
-        <Notification 
-          msg="Razer Members Week: Redeem Razer.com codes at 30% off now and save them for the big drop coming soon." 
-        />
+        <Notification />
       </header>
 
       <main className="flex flex-col gap-y-2 bg-zinc-800 mt-24">
@@ -30,4 +28,12 @@ export default function Home() {
 
     </div>
   );
+}
+
+function Notification() {
+  return(
+    <NotificationStruct 
+      msg="Razer Members Week: Redeem Razer.com codes at 30% off now and save them for the big drop coming soon." 
+    />
+  )
 }

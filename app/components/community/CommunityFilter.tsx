@@ -45,9 +45,9 @@ export default function Filter() {
 
 function FilterStruct({url, label}: {url: string, label: string}) {
     return (
-        <div className="text-white flex flex-col justify-center items-center text-2xl">
-            <img src={url} width={35} alt="" />
-            <p className="text-sm pt-1">{label}</p>
+        <div className="text-white flex flex-col justify-center items-center text-2xl cursor-pointer hover:scale-105 transition-transform group">
+            <img src={url} width={35} alt=""/>
+            <p className="text-sm pt-1 group-hover:text-green-400">{label}</p>
         </div>
     )
 }

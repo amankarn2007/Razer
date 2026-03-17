@@ -1,6 +1,6 @@
 import "../globals.css"
 
-export default function Notification({msg}: {msg: string}) {
+export default function NotificationStruct({msg}: {msg: string}) {
     return (
         <div className="h-10 bg-zinc-800 flex justify-center items-center">
             <p className="text-sm tracking-wide text-gray-100">

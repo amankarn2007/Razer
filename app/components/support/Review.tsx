@@ -1,9 +1,7 @@
 "use client"
-
-import { RefObject, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Review() {
-    const slideNo = useRef<number>(1);
 
     const reviews = [
         { 
@@ -50,17 +48,21 @@ export default function Review() {
 
     const [currentIdx, setCurrentIdx] = useState(1);
 
-    function prevCumment() {
+    //review.length = 10, array stIdx = 0 
+    //if function prevComment() is called and prev = 0 then setCurrentIdx => 10 - 1 = 9
+    function prevComment() {
         setCurrentIdx((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
     }
 
-    function nextCummment() {
+    //if prev = 9 and nextCommment() is called, setCurrentIdx = 0 
+    function nextCommment() {
         setCurrentIdx((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
     }
 
+    //pass review of currentIdx
     return (
         <div className="bg-zinc-900 w-full flex justify-center">
-            <ReviewStruct data={reviews[currentIdx]} onPrev={prevCumment} onNext={nextCummment}/>
+            <ReviewStruct data={reviews[currentIdx]} onPrev={prevComment} onNext={nextCommment}/>
         </div>
     )
 }
