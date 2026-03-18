@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import Hero1 from "../components/Hero1";
-import Hero2 from "../components/Hero2";
-import Hero3 from "../components/Hero3";
+import Hero1 from "../components/landingPage/Hero1";
+import Hero2 from "../components/landingPage/Hero2";
+import Hero3 from "../components/landingPage/Hero3";
 import Navbar from "../components/Navbar";
 import Hero from "../components/support/Hero";
 import Icon from "../components/support/Icon";
@@ -14,11 +14,11 @@ import Review from "../components/support/Review";
 export default function Support() {
     return (
         <div className="w-full">
-            <header>
-                <Navbar position="sticky" />
+            <header className="fixed w-full z-5">
+                <Navbar />
             </header>
 
-            <div>
+            <div className="pt-14">
                 <Hero />
                 <MenuIcons />
                 <PopularCard />

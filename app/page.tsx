@@ -1,11 +1,11 @@
 import "./globals.css"
 import Navbar from "./components/Navbar";
 import NotificationStruct from "./components/Notification";
-import Hero1 from "./components/Hero1";
-import Hero2 from "./components/Hero2";
-import ProductSection from "./components/ProductSection";
+import Hero1 from "./components/landingPage/Hero1";
+import Hero2 from "./components/landingPage/Hero2";
+import ProductSection from "./components/landingPage/ProductSection";
 import Footer from "./components/Footer";
-import Hero3 from "./components/Hero3";
+import Hero3 from "./components/landingPage/Hero3";
 
 export default function Home() {
   return (

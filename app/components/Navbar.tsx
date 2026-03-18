@@ -1,6 +1,8 @@
 "use client"
 import { useRouter } from "next/navigation"
 import "../globals.css"
+import { useState } from "react";
+import ShopingModal from "./modals/shoppingModal";
 
 interface Nav {
     position?: string
@@ -8,6 +10,12 @@ interface Nav {
 
 export default function Navbar(props: Nav) {
     const router = useRouter();
+    const [shoppingModal, setShoppingModal] = useState(false);
+
+    function handleModal() {
+        if(shoppingModal) setShoppingModal(false);
+        else setShoppingModal(true);
+    }
 
     return (
         <div className="bg-black h-12 w-full flex items-center justify-center gap-15 py-7 border-b-2 border-green-500" >
@@ -30,10 +38,14 @@ export default function Navbar(props: Nav) {
                 <div className="opacity-70 hover:opacity-100 cursor-pointer">
                     <span className="material-symbols-outlined">search</span>
                 </div>
-                <div className="opacity-70 hover:opacity-100 cursor-pointer">
+                <div className="opacity-70 hover:opacity-100 cursor-pointer" onClick={handleModal} >
                     <span className="material-symbols-outlined">shopping_cart</span>
                 </div>
             </div>
+
+            { shoppingModal && 
+                <ShopingModal />
+            }
         </div>
     )
 }
@@ -47,6 +59,14 @@ function IconElem({label, onClick}: Icon) {
     return (
         <div className="opacity-70 hover:opacity-100" onClick={onClick}>
             <h4>{label}</h4>
+        </div>
+    )
+}
+
+function NavModal() {
+    return (
+        <div>
+            
         </div>
     )
 }
